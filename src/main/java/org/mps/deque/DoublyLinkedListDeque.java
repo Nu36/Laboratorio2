@@ -1,5 +1,9 @@
 package org.mps.deque;
 
+/**
+ * @author Nuria Rodríguez Tortosa e Hilaria Romero Bouyahia
+ */
+
 public class DoublyLinkedListDeque<T> implements DoubleEndedQueue<T> {
 
     private DequeNode<T> first;
@@ -39,12 +43,20 @@ public class DoublyLinkedListDeque<T> implements DoubleEndedQueue<T> {
     @Override
     public T first() {
         // TODO
-        return first.getItem();
+        if(first == null) {
+            return null;
+        } else {
+            return first.getItem();
+        }
     }
 
     @Override
     public T last() {
-        return last.getItem();
+        if(last == null) {
+            return null;
+        } else {
+            return last.getItem();
+        }
     }
 
     @Override
