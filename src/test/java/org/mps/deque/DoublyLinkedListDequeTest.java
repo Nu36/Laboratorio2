@@ -19,8 +19,8 @@ package org.mps.deque;
 * 11. .first() -> null
 * 12. .size() -> size--
 * Deleting from the end (.deleteLast())
- * 11. .last() -> null
- * 12. .size() -> size--
+ * 13. .last() -> null
+ * 14. .size() -> size--
  * */
 
 import org.junit.jupiter.api.BeforeEach;
@@ -216,6 +216,41 @@ class DoublyLinkedListDequeTest {
                         assertEquals(expectedValue, obtainedValue);
                     }
                 }
+            }
+        }
+
+        @Nested
+        @DisplayName("when accesing the elements of the list")
+        class pruebasDeAcceso{
+
+            @Test
+            @DisplayName("you can get an element that is in the list")
+            public void conseguirElementoDeNodoEnUnaDoublyLinkedListDeque(){
+                list.prepend(4);
+                list.append(6);
+
+                int expectedValue = 6;
+                int obtainedValue = list.get(1);
+
+                assertEquals(expectedValue, obtainedValue);
+            }
+
+            @Test
+            @DisplayName("you can't access an invalid index")
+            public void saltaExceptionAlAccederAUnTamanyoMayorEnUnaDoublyLinkedListDeque(){
+                list.prepend(4);
+                list.append(6);
+
+                assertThrows(ArrayIndexOutOfBoundsException.class, ()-> list.get(3));
+            }
+
+            @Test
+            @DisplayName("you can't access an invalid index under 0")
+            public void saltaExceptionAlAccederAUnaPosicionNegativarEnUnaDoublyLinkedListDeque(){
+                list.prepend(4);
+                list.append(6);
+
+                assertThrows(ArrayIndexOutOfBoundsException.class, ()-> list.get(-1));
             }
         }
     }

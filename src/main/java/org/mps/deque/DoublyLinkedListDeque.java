@@ -22,13 +22,31 @@ public class DoublyLinkedListDeque<T> implements DoubleEndedQueue<T> {
 
     @Override
     public void prepend(T value) {
-        first = new DequeNode<>(value, null, first);
+        if (first == null) {
+            // Si la lista está vacía, el primer nodo será el último también
+            first = new DequeNode<>(value, null, null);
+            last = first;
+        } else {
+            // Si la lista no está vacía, el nuevo nodo será el primer nodo
+            // y su nodo siguiente será el antiguo primer nodo
+            first = new DequeNode<>(value, null, first);
+            first.getNext().setPrevious(first);
+        }
         size++;
     }
 
     @Override
     public void append(T value) {
-        last = new DequeNode<>(value, last, null);
+        if (last == null) {
+            // Si la lista está vacía, el último nodo será el primero también
+            last = new DequeNode<>(value, null, null);
+            first = last;
+        } else {
+            // Si la lista no está vacía, el nuevo nodo será el primer nodo
+            // y su nodo siguiente será el antiguo primer nodo
+            last = new DequeNode<>(value, last, null);
+            last.getPrevious().setNext(last);
+        }
         size++;
     }
 
@@ -70,6 +88,9 @@ public class DoublyLinkedListDeque<T> implements DoubleEndedQueue<T> {
 
     @Override
     public T get(int index) {
+        if(index < 0 || index >= size) {
+            throw new ArrayIndexOutOfBoundsException();
+        }
         if(first != null) {
             DequeNode<T> node = first;
             int cont = 0;
@@ -82,6 +103,7 @@ public class DoublyLinkedListDeque<T> implements DoubleEndedQueue<T> {
                     encontrado = true;
                 }
             }
+            if(node != null && cont == index) return (T) node.getItem();
             if(encontrado) return (T) node.getItem();
         }
         if (last != null) {
@@ -96,6 +118,7 @@ public class DoublyLinkedListDeque<T> implements DoubleEndedQueue<T> {
                     encontrado = true;
                 }
             }
+            if(node != null && cont == index) return (T) node.getItem();
             if(encontrado) return (T) node.getItem();
         }
 
