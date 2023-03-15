@@ -33,8 +33,9 @@ package org.mps.deque;
  * 23. .remove(x) -> size--
  * 24. .remove(x) in a list with only one element -> first == null and last == null
  * 25. .remove(x) in an empty list -> RunTimeException
- * 26. .sort() -> the list is sorted
- * 27. .sort on empty list -> RunTimeException
+ * 26. .remove(x) but x is not on the list -> the list stays the same
+ * 27. .sort() -> the list is sorted
+ * 28. .sort on empty list -> RunTimeException
  * */
 
 import org.junit.jupiter.api.BeforeEach;
