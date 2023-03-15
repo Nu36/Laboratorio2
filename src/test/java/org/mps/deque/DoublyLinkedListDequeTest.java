@@ -252,6 +252,18 @@ class DoublyLinkedListDequeTest {
                 }
 
                 @Test
+                @DisplayName("you can get an element that is in the middle of the list")
+                public void conseguirElementoDeNodoIntermedioEnUnaDoublyLinkedListDeque() {
+                    list.prepend(4);
+                    list.append(6);
+
+                    int expectedValue = 6;
+                    int obtainedValue = list.get(1);
+
+                    assertEquals(expectedValue, obtainedValue);
+                }
+
+                @Test
                 @DisplayName("you can't access an index superior or same as the size of the list")
                 public void saltaExceptionAlAccederAUnTamanyoMayorEnUnaDoublyLinkedListDeque() {
                     list.prepend(4);
@@ -335,6 +347,23 @@ class DoublyLinkedListDequeTest {
                     int actualValue = list.size();
 
                     assertEquals(expectedValue, actualValue);
+                }
+
+                @Test
+                @DisplayName("in a list with only one element")
+                public void EliminarEnUnaListaConSoloUnElemento() {
+                    list.prepend(4);
+
+                    list.remove(4);
+
+                    assertNull(list.first());
+                    assertNull(list.last());
+                }
+
+                @Test
+                @DisplayName("in an empty list")
+                public void EliminarEnUnaListaVacia() {
+                    assertThrows(RuntimeException.class, ()->list.remove(1));
                 }
             }
 

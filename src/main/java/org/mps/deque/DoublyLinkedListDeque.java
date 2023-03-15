@@ -90,23 +90,22 @@ public class DoublyLinkedListDeque<T> implements DoubleEndedQueue<T> {
     public T get(int index) {
         if(index < 0 || index >= size) {
             throw new ArrayIndexOutOfBoundsException();
-        }
-        if(first != null) {
+        } else {
+            T item = null;
             DequeNode<T> node = first;
             int cont = 0;
             boolean encontrado = false;
-            while(node.getNext() != null && !encontrado) {
-                if(cont != index) {
+            while (node != null && !encontrado) {
+                if (cont != index) {
                     node = node.getNext();
                     cont++;
                 } else {
                     encontrado = true;
                 }
             }
-            if(node != null && cont == index) return (T) node.getItem();
-            if(encontrado) return (T) node.getItem();
+            if (encontrado) item = node.getItem();
+            return item;
         }
-        return null;
     }
 
     @Override
@@ -124,30 +123,29 @@ public class DoublyLinkedListDeque<T> implements DoubleEndedQueue<T> {
     @Override
     public void remove(T value) {
         DequeNode<T> node = first;
-        while (node != null) {
-            if (node.getItem().equals(value)) {
-                if (node == first) {
-                    first = node.getNext();
-                    if (first != null) {
-                        first.setPrevious(null);
+        if(node != null) {
+            while (node != null) {
+                if (node.getItem().equals(value)) {
+                    if (node == first) {
+                        first = node.getNext();
+                        if (first != null) {
+                            first.setPrevious(null);
+                        } else {
+                            last = null;
+                        }
+                    } else if (node == last) {
+                        last = node.getPrevious();
                     } else {
-                        last = null;
+                        node.getPrevious().setNext(node.getNext());
+                        node.getNext().setPrevious(node.getPrevious());
                     }
-                } else if (node == last) {
-                    last = node.getPrevious();
-                    if (last != null) {
-                        last.setNext(null);
-                    } else {
-                        first = null;
-                    }
-                } else {
-                    node.getPrevious().setNext(node.getNext());
-                    node.getNext().setPrevious(node.getPrevious());
+                    size--;
+                    return;
                 }
-                size--;
-                return;
+                node = node.getNext();
             }
-            node = node.getNext();
+        } else {
+            throw new RuntimeException("La lista esta vacia");
         }
     }
 

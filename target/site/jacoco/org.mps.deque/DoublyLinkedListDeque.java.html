@@ -90,97 +90,95 @@ public class DoublyLinkedListDeque&lt;T&gt; implements DoubleEndedQueue&lt;T&gt;
     public T get(int index) {
 <span class="fc bfc" id="L91" title="All 4 branches covered.">        if(index &lt; 0 || index &gt;= size) {</span>
 <span class="fc" id="L92">            throw new ArrayIndexOutOfBoundsException();</span>
-        }
-<span class="pc bpc" id="L94" title="1 of 2 branches missed.">        if(first != null) {</span>
+        } else {
+<span class="fc" id="L94">            T item = null;</span>
 <span class="fc" id="L95">            DequeNode&lt;T&gt; node = first;</span>
 <span class="fc" id="L96">            int cont = 0;</span>
 <span class="fc" id="L97">            boolean encontrado = false;</span>
-<span class="fc bfc" id="L98" title="All 4 branches covered.">            while(node.getNext() != null &amp;&amp; !encontrado) {</span>
-<span class="fc bfc" id="L99" title="All 2 branches covered.">                if(cont != index) {</span>
+<span class="pc bpc" id="L98" title="1 of 4 branches missed.">            while (node != null &amp;&amp; !encontrado) {</span>
+<span class="fc bfc" id="L99" title="All 2 branches covered.">                if (cont != index) {</span>
 <span class="fc" id="L100">                    node = node.getNext();</span>
 <span class="fc" id="L101">                    cont++;</span>
                 } else {
 <span class="fc" id="L103">                    encontrado = true;</span>
                 }
             }
-<span class="pc bpc" id="L106" title="2 of 4 branches missed.">            if(node != null &amp;&amp; cont == index) return (T) node.getItem();</span>
-<span class="nc bnc" id="L107" title="All 2 branches missed.">            if(encontrado) return (T) node.getItem();</span>
+<span class="pc bpc" id="L106" title="1 of 2 branches missed.">            if (encontrado) item = node.getItem();</span>
+<span class="fc" id="L107">            return item;</span>
         }
-<span class="nc" id="L109">        return null;</span>
     }
 
     @Override
     public boolean contains(T value) {
-<span class="fc" id="L114">        DequeNode&lt;T&gt; node = first;</span>
-<span class="fc bfc" id="L115" title="All 2 branches covered.">        while (node != null) {</span>
-<span class="fc bfc" id="L116" title="All 2 branches covered.">            if (node.getItem().equals(value)) {</span>
-<span class="fc" id="L117">                return true;</span>
+<span class="fc" id="L113">        DequeNode&lt;T&gt; node = first;</span>
+<span class="fc bfc" id="L114" title="All 2 branches covered.">        while (node != null) {</span>
+<span class="fc bfc" id="L115" title="All 2 branches covered.">            if (node.getItem().equals(value)) {</span>
+<span class="fc" id="L116">                return true;</span>
             }
-<span class="fc" id="L119">            node = node.getNext();</span>
+<span class="fc" id="L118">            node = node.getNext();</span>
         }
-<span class="fc" id="L121">        return false;</span>
+<span class="fc" id="L120">        return false;</span>
     }
 
     @Override
     public void remove(T value) {
-<span class="fc" id="L126">        DequeNode&lt;T&gt; node = first;</span>
-<span class="pc bpc" id="L127" title="1 of 2 branches missed.">        while (node != null) {</span>
-<span class="fc bfc" id="L128" title="All 2 branches covered.">            if (node.getItem().equals(value)) {</span>
-<span class="fc bfc" id="L129" title="All 2 branches covered.">                if (node == first) {</span>
-<span class="fc" id="L130">                    first = node.getNext();</span>
-<span class="pc bpc" id="L131" title="1 of 2 branches missed.">                    if (first != null) {</span>
-<span class="fc" id="L132">                        first.setPrevious(null);</span>
+<span class="fc" id="L125">        DequeNode&lt;T&gt; node = first;</span>
+<span class="fc bfc" id="L126" title="All 2 branches covered.">        if(node != null) {</span>
+<span class="pc bpc" id="L127" title="1 of 2 branches missed.">            while (node != null) {</span>
+<span class="fc bfc" id="L128" title="All 2 branches covered.">                if (node.getItem().equals(value)) {</span>
+<span class="fc bfc" id="L129" title="All 2 branches covered.">                    if (node == first) {</span>
+<span class="fc" id="L130">                        first = node.getNext();</span>
+<span class="fc bfc" id="L131" title="All 2 branches covered.">                        if (first != null) {</span>
+<span class="fc" id="L132">                            first.setPrevious(null);</span>
+                        } else {
+<span class="fc" id="L134">                            last = null;</span>
+                        }
+<span class="fc bfc" id="L136" title="All 2 branches covered.">                    } else if (node == last) {</span>
+<span class="fc" id="L137">                        last = node.getPrevious();</span>
                     } else {
-<span class="nc" id="L134">                        last = null;</span>
+<span class="fc" id="L139">                        node.getPrevious().setNext(node.getNext());</span>
+<span class="fc" id="L140">                        node.getNext().setPrevious(node.getPrevious());</span>
                     }
-<span class="fc bfc" id="L136" title="All 2 branches covered.">                } else if (node == last) {</span>
-<span class="fc" id="L137">                    last = node.getPrevious();</span>
-<span class="pc bpc" id="L138" title="1 of 2 branches missed.">                    if (last != null) {</span>
-<span class="fc" id="L139">                        last.setNext(null);</span>
-                    } else {
-<span class="nc" id="L141">                        first = null;</span>
-                    }
-                } else {
-<span class="fc" id="L144">                    node.getPrevious().setNext(node.getNext());</span>
-<span class="fc" id="L145">                    node.getNext().setPrevious(node.getPrevious());</span>
+<span class="fc" id="L142">                    size--;</span>
+<span class="fc" id="L143">                    return;</span>
                 }
-<span class="fc" id="L147">                size--;</span>
-<span class="fc" id="L148">                return;</span>
+<span class="fc" id="L145">                node = node.getNext();</span>
             }
-<span class="fc" id="L150">            node = node.getNext();</span>
+        } else {
+<span class="fc" id="L148">            throw new RuntimeException(&quot;La lista esta vacia&quot;);</span>
         }
-<span class="nc" id="L152">    }</span>
+<span class="nc" id="L150">    }</span>
 
 
     private T[] toArray() {
-<span class="fc" id="L156">        T[] array = (T[]) new Object[size];</span>
-<span class="fc" id="L157">        DequeNode&lt;T&gt; node = first;</span>
-<span class="fc bfc" id="L158" title="All 2 branches covered.">        for (int i = 0; i &lt; size; i++) {</span>
-<span class="fc" id="L159">            array[i] = node.getItem();</span>
-<span class="fc" id="L160">            node = node.getNext();</span>
+<span class="fc" id="L154">        T[] array = (T[]) new Object[size];</span>
+<span class="fc" id="L155">        DequeNode&lt;T&gt; node = first;</span>
+<span class="fc bfc" id="L156" title="All 2 branches covered.">        for (int i = 0; i &lt; size; i++) {</span>
+<span class="fc" id="L157">            array[i] = node.getItem();</span>
+<span class="fc" id="L158">            node = node.getNext();</span>
         }
-<span class="fc" id="L162">        return array;</span>
+<span class="fc" id="L160">        return array;</span>
     }
 
     @Override
     public void sort(Comparator&lt;? super T&gt; comparator) {
-<span class="fc" id="L167">        T[] elements = toArray();</span>
+<span class="fc" id="L165">        T[] elements = toArray();</span>
 
-<span class="fc" id="L169">        Arrays.sort(elements, comparator);</span>
+<span class="fc" id="L167">        Arrays.sort(elements, comparator);</span>
 
-<span class="fc bfc" id="L171" title="All 2 branches covered.">        if (elements.length &gt; 0) {</span>
-<span class="fc" id="L172">            first = new DequeNode&lt;&gt;(elements[0], null, null);</span>
-<span class="fc" id="L173">            DequeNode&lt;T&gt; node = first;</span>
-<span class="fc bfc" id="L174" title="All 2 branches covered.">            for (int i = 1; i &lt; elements.length; i++) {</span>
-<span class="fc" id="L175">                DequeNode&lt;T&gt; nextNode = new DequeNode&lt;&gt;(elements[i], node, null);</span>
-<span class="fc" id="L176">                node.setNext(nextNode);</span>
-<span class="fc" id="L177">                node = nextNode;</span>
+<span class="fc bfc" id="L169" title="All 2 branches covered.">        if (elements.length &gt; 0) {</span>
+<span class="fc" id="L170">            first = new DequeNode&lt;&gt;(elements[0], null, null);</span>
+<span class="fc" id="L171">            DequeNode&lt;T&gt; node = first;</span>
+<span class="fc bfc" id="L172" title="All 2 branches covered.">            for (int i = 1; i &lt; elements.length; i++) {</span>
+<span class="fc" id="L173">                DequeNode&lt;T&gt; nextNode = new DequeNode&lt;&gt;(elements[i], node, null);</span>
+<span class="fc" id="L174">                node.setNext(nextNode);</span>
+<span class="fc" id="L175">                node = nextNode;</span>
             }
-<span class="fc" id="L179">            last = node;</span>
-<span class="fc" id="L180">        } else {</span>
-<span class="fc" id="L181">            throw new RuntimeException(&quot;La lista esta vacia&quot;);</span>
+<span class="fc" id="L177">            last = node;</span>
+<span class="fc" id="L178">        } else {</span>
+<span class="fc" id="L179">            throw new RuntimeException(&quot;La lista esta vacia&quot;);</span>
         }
-<span class="fc" id="L183">    }</span>
+<span class="fc" id="L181">    }</span>
 
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>
