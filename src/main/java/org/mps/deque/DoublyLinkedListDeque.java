@@ -106,22 +106,6 @@ public class DoublyLinkedListDeque<T> implements DoubleEndedQueue<T> {
             if(node != null && cont == index) return (T) node.getItem();
             if(encontrado) return (T) node.getItem();
         }
-        if (last != null) {
-            DequeNode<T> node = last;
-            int cont = 0;
-            boolean encontrado = false;
-            while (node.getPrevious() != null && !encontrado) {
-                if (cont != index) {
-                    node = node.getPrevious();
-                    cont++;
-                } else {
-                    encontrado = true;
-                }
-            }
-            if(node != null && cont == index) return (T) node.getItem();
-            if(encontrado) return (T) node.getItem();
-        }
-
         return null;
     }
 
@@ -194,8 +178,7 @@ public class DoublyLinkedListDeque<T> implements DoubleEndedQueue<T> {
             }
             last = node;
         } else {
-            first = null;
-            last = null;
+            throw new RuntimeException("La lista esta vacia");
         }
     }
 

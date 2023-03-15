@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="org.mps.deque.DoublyLinkedListDequeTest" time="0.016" tests="14" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="org.mps.deque.DoublyLinkedListDequeTest" time="0.072" tests="24" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="17"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="ES"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-17.0.1\bin"/>
-    <property name="sun.java.command" value="C:\Users\nurir\AppData\Local\Temp\surefire8980657133779297026\surefirebooter9442481195358292108.jar C:\Users\nurir\AppData\Local\Temp\surefire8980657133779297026 2023-03-08T20-13-29_224-jvmRun1 surefire5437194911691109828tmp surefire_010795076818242452282tmp"/>
+    <property name="sun.java.command" value="C:\Users\nurir\AppData\Local\Temp\surefire15340079530410269799\surefirebooter14935026313567307903.jar C:\Users\nurir\AppData\Local\Temp\surefire15340079530410269799 2023-03-15T19-36-12_129-jvmRun1 surefire3152780380374734917tmp surefire_011115362941782922189tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="D:\Documentos\3Carrera\Mantenimiento_y_pruebas\ColaDoble\target\test-classes;D:\Documentos\3Carrera\Mantenimiento_y_pruebas\ColaDoble\target\classes;C:\Users\nurir\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.9.2\junit-jupiter-engine-5.9.2.jar;C:\Users\nurir\.m2\repository\org\junit\platform\junit-platform-engine\1.9.2\junit-platform-engine-1.9.2.jar;C:\Users\nurir\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\nurir\.m2\repository\org\junit\platform\junit-platform-commons\1.9.2\junit-platform-commons-1.9.2.jar;C:\Users\nurir\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.9.2\junit-jupiter-api-5.9.2.jar;C:\Users\nurir\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\nurir\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.9.2\junit-jupiter-params-5.9.2.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -30,7 +30,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\nurir\AppData\Local\Temp\surefire8980657133779297026\surefirebooter9442481195358292108.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\nurir\AppData\Local\Temp\surefire15340079530410269799\surefirebooter14935026313567307903.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="17.0.1+12-LTS-39"/>
@@ -50,7 +50,7 @@
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
     <property name="sun.os.patch.level" value=""/>
     <property name="native.encoding" value="Cp1252"/>
-    <property name="java.library.path" value="C:\Program Files\Java\jdk-17.0.1\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files\Haskell\bin;C:\Program Files\Haskell Platform\8.6.5\lib\extralibs\bin;C:\Program Files\Haskell Platform\8.6.5\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Haskell Platform\8.6.5\mingw\bin;C:\MinGW\bin;D:\apache-maven-3.8.7\bin;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\110\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files\Microsoft SQL Server\120\DTS\Binn\;C:\Program Files\Git\cmd;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;C:\Program Files\dotnet\;D:\MATLAB\bin;C:\Users\nurir\Downloads\MinGW;C:\Users\nurir\AppData\Roaming\cabal\bin;C:\Users\nurir\AppData\Roaming\local\bin;C:\Users\nurir\AppData\Local\Microsoft\WindowsApps;C:\Users\nurir\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\nurir\AppData\Local\GitHubDesktop\bin;C:\Users\nurir\AppData\Local\Programs\MiKTeX\miktex\bin\x64\;C:\Users\nurir\.dotnet\tools;."/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk-17.0.1\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files\Haskell\bin;C:\Program Files\Haskell Platform\8.6.5\lib\extralibs\bin;C:\Program Files\Haskell Platform\8.6.5\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Haskell Platform\8.6.5\mingw\bin;C:\MinGW\bin;D:\apache-maven-3.8.7\bin;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\110\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files\Microsoft SQL Server\120\DTS\Binn\;C:\Program Files\Git\cmd;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;C:\Program Files\dotnet\;D:\MATLAB\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\nurir\Downloads\MinGW;C:\Users\nurir\AppData\Roaming\cabal\bin;C:\Users\nurir\AppData\Roaming\local\bin;C:\Users\nurir\AppData\Local\Microsoft\WindowsApps;C:\Users\nurir\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\nurir\AppData\Local\GitHubDesktop\bin;C:\Users\nurir\AppData\Local\Programs\MiKTeX\miktex\bin\x64\;C:\Users\nurir\.dotnet\tools;."/>
     <property name="java.vm.info" value="mixed mode, sharing"/>
     <property name="java.vendor" value="Oracle Corporation"/>
     <property name="java.vm.version" value="17.0.1+12-LTS-39"/>
@@ -61,13 +61,23 @@
   <testcase name="crearUnaDoublyLinkedListDequeFirst" classname="org.mps.deque.DoublyLinkedListDequeTest$CreadaDoublyLinkedListDeque" time="0"/>
   <testcase name="crearUnaDoublyLinkedListDeque" classname="org.mps.deque.DoublyLinkedListDequeTest$CreadaDoublyLinkedListDeque" time="0"/>
   <testcase name="crearUnaDoublyLinkedListDequeLast" classname="org.mps.deque.DoublyLinkedListDequeTest$CreadaDoublyLinkedListDeque" time="0"/>
-  <testcase name="deletingLastThenLastIsNull" classname="org.mps.deque.DoublyLinkedListDequeTest$CreadaDoublyLinkedListDeque$AnyadirNodoADoublyLinkedListDeque$eliminarNodoDeDoublyLinkedListDeque$deletingFromEndDoublyLinkedListDeque" time="0.001"/>
-  <testcase name="deletingLastThenSizeDecrease" classname="org.mps.deque.DoublyLinkedListDequeTest$CreadaDoublyLinkedListDeque$AnyadirNodoADoublyLinkedListDeque$eliminarNodoDeDoublyLinkedListDeque$deletingFromEndDoublyLinkedListDeque" time="0.001"/>
-  <testcase name="deletingFirstThenFirstIsNull" classname="org.mps.deque.DoublyLinkedListDequeTest$CreadaDoublyLinkedListDeque$AnyadirNodoADoublyLinkedListDeque$eliminarNodoDeDoublyLinkedListDeque$deletingFromStartDoublyLinkedListDeque" time="0"/>
+  <testcase name="NoSePuedeOrdenarUnaListaVacia" classname="org.mps.deque.DoublyLinkedListDequeTest$CreadaDoublyLinkedListDeque$pruebasDeAcceso$pruebasSort" time="0"/>
+  <testcase name="seOrdenaLaLista" classname="org.mps.deque.DoublyLinkedListDequeTest$CreadaDoublyLinkedListDeque$pruebasDeAcceso$pruebasSort" time="0.001"/>
+  <testcase name="alEliminarSeDecrementaElTamano" classname="org.mps.deque.DoublyLinkedListDequeTest$CreadaDoublyLinkedListDeque$pruebasDeAcceso$pruebasRemove" time="0.002"/>
+  <testcase name="correctamenteUnidos" classname="org.mps.deque.DoublyLinkedListDequeTest$CreadaDoublyLinkedListDeque$pruebasDeAcceso$pruebasRemove" time="0.001"/>
+  <testcase name="seEliminaUnElementoDeLaLista" classname="org.mps.deque.DoublyLinkedListDequeTest$CreadaDoublyLinkedListDeque$pruebasDeAcceso$pruebasRemove" time="0.002"/>
+  <testcase name="laListaNoContieneElElemento" classname="org.mps.deque.DoublyLinkedListDequeTest$CreadaDoublyLinkedListDeque$pruebasDeAcceso$pruebasContains" time="0.002"/>
+  <testcase name="laListaContieneElElemento" classname="org.mps.deque.DoublyLinkedListDequeTest$CreadaDoublyLinkedListDeque$pruebasDeAcceso$pruebasContains" time="0.003"/>
+  <testcase name="saltaExceptionAlAccederAUnTamanyoMayorEnUnaDoublyLinkedListDeque" classname="org.mps.deque.DoublyLinkedListDequeTest$CreadaDoublyLinkedListDeque$pruebasDeAcceso$pruebasGet" time="0.003"/>
+  <testcase name="saltaExceptionAlAccederAUnaPosicionNegativarEnUnaDoublyLinkedListDeque" classname="org.mps.deque.DoublyLinkedListDequeTest$CreadaDoublyLinkedListDeque$pruebasDeAcceso$pruebasGet" time="0.001"/>
+  <testcase name="conseguirElementoDeNodoEnUnaDoublyLinkedListDeque" classname="org.mps.deque.DoublyLinkedListDequeTest$CreadaDoublyLinkedListDeque$pruebasDeAcceso$pruebasGet" time="0.002"/>
+  <testcase name="deletingLastThenLastIsNull" classname="org.mps.deque.DoublyLinkedListDequeTest$CreadaDoublyLinkedListDeque$AnyadirNodoADoublyLinkedListDeque$eliminarNodoDeDoublyLinkedListDeque$deletingFromEndDoublyLinkedListDeque" time="0.002"/>
+  <testcase name="deletingLastThenSizeDecrease" classname="org.mps.deque.DoublyLinkedListDequeTest$CreadaDoublyLinkedListDeque$AnyadirNodoADoublyLinkedListDeque$eliminarNodoDeDoublyLinkedListDeque$deletingFromEndDoublyLinkedListDeque" time="0.003"/>
+  <testcase name="deletingFirstThenFirstIsNull" classname="org.mps.deque.DoublyLinkedListDequeTest$CreadaDoublyLinkedListDeque$AnyadirNodoADoublyLinkedListDeque$eliminarNodoDeDoublyLinkedListDeque$deletingFromStartDoublyLinkedListDeque" time="0.001"/>
   <testcase name="deletingFirstThenSizeIsDecreased" classname="org.mps.deque.DoublyLinkedListDequeTest$CreadaDoublyLinkedListDeque$AnyadirNodoADoublyLinkedListDeque$eliminarNodoDeDoublyLinkedListDeque$deletingFromStartDoublyLinkedListDeque" time="0.001"/>
   <testcase name="anyadirLastNoEsNullADoublyLinkedListDeque" classname="org.mps.deque.DoublyLinkedListDequeTest$CreadaDoublyLinkedListDeque$AnyadirNodoADoublyLinkedListDeque$AnyadirPorElFinalADoublyLinkedListDeque" time="0.001"/>
-  <testcase name="anyadirNodoPorElFinalADoublyLinkedListDeque" classname="org.mps.deque.DoublyLinkedListDequeTest$CreadaDoublyLinkedListDeque$AnyadirNodoADoublyLinkedListDeque$AnyadirPorElFinalADoublyLinkedListDeque" time="0"/>
-  <testcase name="tamanyoEsIncrementadoFinalDoublyLinkedListDeque" classname="org.mps.deque.DoublyLinkedListDequeTest$CreadaDoublyLinkedListDeque$AnyadirNodoADoublyLinkedListDeque$AnyadirPorElFinalADoublyLinkedListDeque" time="0"/>
+  <testcase name="anyadirNodoPorElFinalADoublyLinkedListDeque" classname="org.mps.deque.DoublyLinkedListDequeTest$CreadaDoublyLinkedListDeque$AnyadirNodoADoublyLinkedListDeque$AnyadirPorElFinalADoublyLinkedListDeque" time="0.001"/>
+  <testcase name="tamanyoEsIncrementadoFinalDoublyLinkedListDeque" classname="org.mps.deque.DoublyLinkedListDequeTest$CreadaDoublyLinkedListDeque$AnyadirNodoADoublyLinkedListDeque$AnyadirPorElFinalADoublyLinkedListDeque" time="0.001"/>
   <testcase name="tamanyoEsIncrementadoInicioDoublyLinkedListDeque" classname="org.mps.deque.DoublyLinkedListDequeTest$CreadaDoublyLinkedListDeque$AnyadirNodoADoublyLinkedListDeque$AnyadirPorElInicioADoublyLinkedListDeque" time="0.001"/>
   <testcase name="anyadirFirstNoEsNullADoublyLinkedListDeque" classname="org.mps.deque.DoublyLinkedListDequeTest$CreadaDoublyLinkedListDeque$AnyadirNodoADoublyLinkedListDeque$AnyadirPorElInicioADoublyLinkedListDeque" time="0.001"/>
   <testcase name="anyadirNodoPorElInicioADoublyLinkedListDeque" classname="org.mps.deque.DoublyLinkedListDequeTest$CreadaDoublyLinkedListDeque$AnyadirNodoADoublyLinkedListDeque$AnyadirPorElInicioADoublyLinkedListDeque" time="0.001"/>
