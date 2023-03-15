@@ -95,7 +95,7 @@ public class DoublyLinkedListDeque<T> implements DoubleEndedQueue<T> {
             DequeNode<T> node = first;
             int cont = 0;
             boolean encontrado = false;
-            while (node != null && !encontrado) {
+            while (!encontrado) {
                 if (cont != index) {
                     node = node.getNext();
                     cont++;
@@ -103,8 +103,7 @@ public class DoublyLinkedListDeque<T> implements DoubleEndedQueue<T> {
                     encontrado = true;
                 }
             }
-            if (encontrado) item = node.getItem();
-            return item;
+            return node.getItem();
         }
     }
 

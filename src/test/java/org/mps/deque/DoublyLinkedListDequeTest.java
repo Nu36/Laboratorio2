@@ -23,15 +23,18 @@ package org.mps.deque;
  * 14. .size() -> size--
  * When accesing the elements of the list
  * 15. .get(i) -> you get the element x that is in the index i
- * 16. .get(i), with i being >= to the size of the list -> ArrayIndexOutOfBoundsException
- * 17. .get(i), with i < 0 -> ArrayIndexOutOfBoundsException
- * 18. .contains(x) -> true
- * 19. .contains(y) -> false
- * 20. .remove(x) -> .contains(x) is false
- * 21. .remove(x) -> contains(y) is true because it was not deleted
- * 22. .remove(x) -> size--
- * 23. .sort() -> the list is sorted
- * 24. .sort on empty list -> RunTimeException
+ * 16. .get(i) but in the middle -> you get the element x that is in the index i
+ * 17. .get(i), with i being >= to the size of the list -> ArrayIndexOutOfBoundsException
+ * 18. .get(i), with i < 0 -> ArrayIndexOutOfBoundsException
+ * 19. .contains(x) -> true
+ * 20. .contains(y) -> false
+ * 21. .remove(x) -> .contains(x) is false
+ * 22. .remove(x) -> contains(y) is true because it was not deleted
+ * 23. .remove(x) -> size--
+ * 24. .remove(x) in a list with only one element -> first == null and last == null
+ * 25. .remove(x) in an empty list -> RunTimeException
+ * 26. .sort() -> the list is sorted
+ * 27. .sort on empty list -> RunTimeException
  * */
 
 import org.junit.jupiter.api.BeforeEach;
@@ -255,9 +258,10 @@ class DoublyLinkedListDequeTest {
                 @DisplayName("you can get an element that is in the middle of the list")
                 public void conseguirElementoDeNodoIntermedioEnUnaDoublyLinkedListDeque() {
                     list.prepend(4);
+                    list.append(5);
                     list.append(6);
 
-                    int expectedValue = 6;
+                    int expectedValue = 5;
                     int obtainedValue = list.get(1);
 
                     assertEquals(expectedValue, obtainedValue);
@@ -364,6 +368,20 @@ class DoublyLinkedListDequeTest {
                 @DisplayName("in an empty list")
                 public void EliminarEnUnaListaVacia() {
                     assertThrows(RuntimeException.class, ()->list.remove(1));
+                }
+
+                @Test
+                @DisplayName("an item that is not on the list")
+                public void seEliminaUnElementoQueNoEstaEnLaLista() {
+                    list.prepend(4);
+                    list.append(6);
+
+                    list.remove(5);
+
+                    int expectedValue = 1;
+                    int obtainedValue = list.size();
+
+                    assertNotEquals(expectedValue, obtainedValue);
                 }
             }
 
